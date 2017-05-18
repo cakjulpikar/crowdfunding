@@ -12,6 +12,32 @@ module.exports = {
         isBetaMember: false
       }], {});
     */
+    return queryInterface.bulkInsert('Campaigns', [{
+      title : "Bantu Wujudkan Perpustakaan Jalanan Pos Duri",
+      desc : ,
+      goal : ,
+      starter_id
+    },{
+      title : "",
+      desc : ,
+      goal : ,
+      starter_id
+    },{
+      title : ,
+      desc : ,
+      goal : ,
+      starter_id
+    },{
+      title : ,
+      desc : ,
+      goal : ,
+      starter_id
+    },{
+      title : ,
+      desc : ,
+      goal : ,
+      starter_id
+    }], {});
   },
 
   down: function (queryInterface, Sequelize) {
