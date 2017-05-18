@@ -1,5 +1,12 @@
-<%if(!session){%>
-<a href="/signUp">Sign Up</a>
-<a href="/logIn">Log In</a>
-<%}%>
-<a href="/about">about</a>
+<div class="">
+  <%if(!session){%>
+  <a href="/">Home</a>
+  <a href="/signup">Sign Up</a>
+  <a href="/login">Log In</a>
+  <a href="/about">About</a>
+  <%} else {%>
+  <a href="/">Home</a>
+  <a href="/about">About</a>
+  <a href="/logout">Log Out</a>
+  <%}%>
+</div>
