@@ -8,6 +8,8 @@ var session = require('express-session');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var campaign = require('./routes/campaign');
+
 
 var app = express();
 
@@ -30,6 +32,7 @@ app.use(session({
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/campaign', campaign);
 
 
 

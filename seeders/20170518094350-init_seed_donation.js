@@ -19,7 +19,7 @@ module.exports = {
       createdAt : new Date(),
       updatedAt : new Date()
     },{
-      donor_id: 5,
+      donor_id: 4,
       campaign_id: 2,
       amount : 150000,
       createdAt : new Date(),

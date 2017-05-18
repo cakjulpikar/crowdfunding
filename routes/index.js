@@ -1,20 +1,16 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../models')
+var helper = require('../helper/help')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   let session = req.session.user
   db.Campaign.findAll({include:[{
-    model:db.User,
-      include:[
-        db.Donation
-      ]
-    }]
+    model:db.User},{model:db.Donation}]
   })
   .then(campaigns=>{
-    console.log(campaigns);
-    res.render('index', { title: 'Express',session:session,campaigns:campaigns });
+    res.render('index', { title: 'Express',session:session,campaigns:campaigns,sumAmount:helper.sumAmount });
   })
 });
 
@@ -84,5 +80,6 @@ router.get('/logout', function(req, res, next) {
   delete req.session
   res.render('logout', { title: 'Express',session:session });
 });
+
 
 module.exports = router;

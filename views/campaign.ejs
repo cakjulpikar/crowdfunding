@@ -4,18 +4,17 @@
   </head>
   <body>
     <%- include ./partial/header.ejs %>
-    <h1>Profile page for <%= campaigns[0].User.username %></h1>
+    <h1>Campaign detail for <%= campaign.title %></h1>
   </body>
-  <%campaigns.forEach(campaign=>{%>
     <div class="">
-      <a href="/campaign/<%-campaign.id%>">Title: <%-campaign.title%></a><br> 
+      <p>Title: <%-campaign.title%></p>
       <p>Goal: Rp <%-campaign.goal%></p>
+      <a href="/users/<%=campaign.starter_id%>">Starter: <%-campaign.User.username%></a><br>
       <p>Current fund: <%-sumAmount(campaign.Donations)%></p>
       <p><%-campaign.desc%></p>
-      <%if(session && session.username==campaign.User.username){%>
-        <a href="/campaign/edit/<%campaign.id%>">Edit</a>
+      <%if(session && session.id==campaign.starter_id){%>
+        <a href="/campaign/edit/<%=campaign.id%>">Edit</a>
       <%}%>
     </div>
-  <%})%>
   <%- include ./partial/footer.ejs %>
 </html>
