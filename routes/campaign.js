@@ -20,6 +20,7 @@ router.get('/edit/:id', function(req, res, next){
   if(session){
     db.Campaign.findOne({
       where : {id : req.params.id},
+      include:[{model:db.User},{model:db.Donation}]
     })
     .then(function(campaign) {
       if(session.id==campaign.starter_id){
@@ -34,14 +35,15 @@ router.get('/edit/:id', function(req, res, next){
 });
 
 router.post('/edit/:id',function(req,res,next){
-  db.Campaign.findById({where:{id:req.params.id}})
+  let id = req.params.id
+  db.Campaign.findById(id)
   .then(campaign=>{
     campaign.update({
       goal:req.body.goal,
       desc:req.body.desc
     })
     .then(()=>{
-      res.redirect('/campaign/req.params.id')
+      res.redirect(`/campaign/${id}`)
     })
     .catch(err=>{
       console.log(err.message);

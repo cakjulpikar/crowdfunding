@@ -65,6 +65,10 @@ router.post('/login', function(req, res, next) {
         res.redirect('/login')
       }
     })
+    .catch(err=>{
+      console.log(err.message);
+      res.redirect('/')
+    })
   } else {
     res.redirect('/')
   }
