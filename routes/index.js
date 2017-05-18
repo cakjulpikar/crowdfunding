@@ -76,8 +76,8 @@ router.get('/about', function(req, res, next) {
 });
 
 router.get('/logout', function(req, res, next) {
+  req.session.user = null
   let session = req.session.user
-  delete req.session
   res.render('logout', { title: 'Express',session:session });
 });
 
