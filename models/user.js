@@ -1,9 +1,37 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define('User', {
-    username: DataTypes.STRING,
+    username: {
+      type: DataTypes.STRING,
+      validate:{
+        isUnique:(value,next)=>{
+          User.findOne({where:{username:value}})
+          .then(username=>{
+            if(username){
+              next('username must be unique')
+            } else {
+              next()
+            }
+          })
+        }
+      }
+    },
     password: DataTypes.STRING,
-    email: DataTypes.STRING,
+    email: {
+      type:DataTypes.STRING,
+      validate:{
+        isUnique:(value,next)=>{
+          User.findOne({where:{email:value}})
+          .then(email=>{
+            if(email){
+              next('email must be unique')
+            } else {
+              next()
+            }
+          })
+        }
+      }
+    },
     profpic_path: DataTypes.STRING
   }, {
     classMethods: {
