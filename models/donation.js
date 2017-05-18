@@ -8,8 +8,8 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
-        Donation.belongTo(models.User, {foreignKey : 'donor_id'})
-        Donation.belongTo(models.Campaign, {foreignKey : 'campaign_id'})
+        Donation.belongsTo(models.User, {foreignKey : 'donor_id'})
+        Donation.belongsTo(models.Campaign, {foreignKey : 'campaign_id'})
       }
     }
   });

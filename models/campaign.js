@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
         // associations can be defined here
         Campaign.hasMany(models.Donation, {foreignKey : 'campaign_id'})
-        Campaign.belongTo(models.User, {foreignKey : 'starter_id'})
+        Campaign.belongsTo(models.User, {foreignKey : 'starter_id'})
       }
     }
   });
