@@ -11,12 +11,13 @@
   </body>
   <%campaigns.forEach(campaign=>{%>
     <div class="campaigns">
-      <p>Title: <%-campaign.title%></p>
+      <p>Title: <a href="/campaign/<%-campaign.id%>"><%-campaign.title%></a></p>
       <p>Goal: Rp <%-campaign.goal%></p>
-      <a href="/users/<%=campaign.starter_id%>">Starter: <%-campaign.User.username%></a><br>
+      <p>Starter: <a href="/users/<%=campaign.starter_id%>"><%-campaign.User.username%></a></p>
       <p>Current fund: <%-sumAmount(campaign.Donations)%></p>
-      <p><%-campaign.desc%></p>
-      <a href=""></a>
+      <%if(session && session.username==campaign.User.username){%>
+        <a href="/campaign/edit/<%=campaign.id%>">Edit</a>
+      <%}%>
     </div>
   <%})%>
   <%- include ./partial/footer.ejs %>

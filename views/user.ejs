@@ -8,10 +8,9 @@
   </body>
   <%campaigns.forEach(campaign=>{%>
     <div class="">
-      <a href="/campaign/<%-campaign.id%>">Title: <%-campaign.title%></a><br>
+      <p>Title: <a href="/campaign/<%-campaign.id%>"><%-campaign.title%></a></p>
       <p>Goal: Rp <%-campaign.goal%></p>
       <p>Current fund: <%-sumAmount(campaign.Donations)%></p>
-      <p><%-campaign.desc%></p>
       <%if(session && session.username==campaign.User.username){%>
         <a href="/campaign/edit/<%=campaign.id%>">Edit</a>
       <%}%>

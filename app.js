@@ -9,6 +9,8 @@ var session = require('express-session');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var campaign = require('./routes/campaign');
+var signup = require('./routes/signup');
+var login = require('./routes/login');
 
 
 var app = express();
@@ -33,6 +35,9 @@ app.use(session({
 app.use('/', index);
 app.use('/users', users);
 app.use('/campaign', campaign);
+app.use('/signup', signup);
+app.use('/login', login);
+
 
 
 
