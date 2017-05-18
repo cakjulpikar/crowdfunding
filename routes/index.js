@@ -4,7 +4,8 @@ var db = require('../models')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  let session = req.session.user
+  res.render('index', { title: 'Express',session:session });
 });
 
 module.exports = router;
