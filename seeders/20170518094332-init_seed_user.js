@@ -79,6 +79,13 @@ module.exports = {
       profpic_path : null,
       createdAt : new Date(),
       updatedAt : new Date()
+    },{
+      username : "aramis",
+      password : "aramis",
+      email : "aramis@gmail.com",
+      profpic_path : null,
+      createdAt : new Date(),
+      updatedAt : new Date()
     }], {});
   }
 };
