@@ -7,10 +7,4 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-//Testing associations 1
-// router.get('/',function (req,res,next) {
-//   db.
-//
-// })
-
 module.exports = router;
