@@ -5,7 +5,17 @@ var db = require('../models')
 /* GET home page. */
 router.get('/', function(req, res, next) {
   let session = req.session.user
-  res.render('index', { title: 'Express',session:session });
+  db.Campaign.findAll({include:[{
+    model:db.User,
+      include:[
+        db.Donation
+      ]
+    }]
+  })
+  .then(campaigns=>{
+    console.log(campaigns);
+    res.render('index', { title: 'Express',session:session,campaigns:campaigns });
+  })
 });
 
 router.get('/signup', function(req, res, next) {
@@ -54,7 +64,7 @@ router.post('/login', function(req, res, next) {
     .then(user=>{
       if(user.password==req.body.password){
         req.session.user = user;
-        res.redirect(`/user/${user.id}`)
+        res.redirect(`/`)
       } else {
         res.redirect('/login')
       }
