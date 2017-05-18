@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <%- include ./partial/header.ejs %>
+    <h1>Create a campaign</h1>
+  </body>
+    <div class="">
+      <form class="" action="/campaign/create" method="post">
+        <label for="">Title :</label>
+        <input type="text" name="title" placeholder="Insert title here"><br>
+        <label for="">Goal :</label>
+        <input type="text" name="goal" placeholder="Insert goal here"><br>
+        <label for="">Desc :</label>
+        <input type="text" name="desc" placeholder="Insert desc here"><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  <%- include ./partial/footer.ejs %>
+</html>

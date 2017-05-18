@@ -14,6 +14,9 @@
       <p><%-campaign.desc%></p>
       <%if(session && session.id==campaign.starter_id){%>
         <a href="/campaign/edit/<%=campaign.id%>">Edit</a>
+        <%if(sumAmount(campaign.Donations)>=campaign.goal){%>
+        <a href="/close/<%=campaign.id%>" onclick="return confirm('Are you sure?')">Close campaign</a>
+        <%}%>
       <%}%>
     </div>
   <%- include ./partial/footer.ejs %>

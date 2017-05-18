@@ -11,6 +11,7 @@ var users = require('./routes/users');
 var campaign = require('./routes/campaign');
 var signup = require('./routes/signup');
 var login = require('./routes/login');
+var close = require('./routes/close');
 
 
 var app = express();
@@ -37,6 +38,7 @@ app.use('/users', users);
 app.use('/campaign', campaign);
 app.use('/signup', signup);
 app.use('/login', login);
+app.use('/close', close);
 
 
 

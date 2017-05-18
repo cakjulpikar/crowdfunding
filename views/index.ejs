@@ -17,6 +17,9 @@
       <p>Current fund: <%-sumAmount(campaign.Donations)%></p>
       <%if(session && session.username==campaign.User.username){%>
         <a href="/campaign/edit/<%=campaign.id%>">Edit</a>
+        <%if(sumAmount(campaign.Donations)>=campaign.goal){%>
+        <a href="/close/<%=campaign.id%>" onclick="return confirm('Are you sure?')">Close campaign</a>
+        <%}%>
       <%}%>
     </div>
   <%})%>
