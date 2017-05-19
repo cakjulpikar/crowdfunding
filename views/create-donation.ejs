@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <%- include ./partial/header.ejs %>
+    <h1>Donate</h1>
+  </body>
+    <div class="">
+      <p>Title: <%-campaign.title%></p>
+      <form class="" action="/donation/<%-id%>" method="post">
+        <label for="">Amount :</label>
+        <input type="text" name="amount" placeholder="Insert the amount you want to donate"><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  <%- include ./partial/footer.ejs %>
+</html>

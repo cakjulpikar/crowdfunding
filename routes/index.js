@@ -10,19 +10,19 @@ router.get('/', function(req, res, next) {
     model:db.User},{model:db.Donation}]
   })
   .then(campaigns=>{
-    res.render('index', { title: 'Express',session:session,campaigns:campaigns,sumAmount:helper.sumAmount });
+    res.render('index', { title: 'Mutualizm',session:session,campaigns:campaigns,sumAmount:helper.sumAmount });
   })
 });
 
 router.get('/about', function(req, res, next) {
   let session = req.session.user
-  res.render('about', { title: 'Express',session:session });
+  res.render('about', { title: 'Mutualizm',session:session });
 });
 
 router.get('/logout', function(req, res, next) {
   req.session.user = null
   let session = req.session.user
-  res.render('logout', { title: 'Express',session:session });
+  res.render('logout', { title: 'Mutualizm',session:session });
 });
 
 

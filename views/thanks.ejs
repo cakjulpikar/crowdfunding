@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <%- include ./partial/header.ejs %>
+    <h5>Thanks a lot <%-session.username%> for your donation!</h5>
+    <p>You just already donate Rp <%-donation.amount%></p>
+  </body>
+  <%- include ./partial/footer.ejs %>
+</html>

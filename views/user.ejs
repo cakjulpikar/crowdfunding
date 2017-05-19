@@ -11,10 +11,13 @@
       <p>Title: <a href="/campaign/<%-campaign.id%>"><%-campaign.title%></a></p>
       <p>Goal: Rp <%-campaign.goal%></p>
       <p>Current fund: <%-sumAmount(campaign.Donations)%></p>
-      <%if(session && session.username==campaign.User.username){%>
-        <a href="/campaign/edit/<%=campaign.id%>">Edit</a>
-        <%if(sumAmount(campaign.Donations)>=campaign.goal){%>
-        <a href="/close/<%=campaign.id%>" onclick="return confirm('Are you sure?')">Close campaign</a>
+      <%if(session){%>
+          <a href="/donation/<%-campaign.id%>">Donate</a>
+        <%if(session.username==campaign.User.username){%>
+          <a href="/campaign/edit/<%=campaign.id%>">Edit</a>
+          <%if(sumAmount(campaign.Donations)>=campaign.goal){%>
+          <a href="/close/<%=campaign.id%>" onclick="return confirm('Are you sure?')">Close campaign</a>
+          <%}%>
         <%}%>
       <%}%>
     </div>
