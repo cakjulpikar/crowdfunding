@@ -1,11 +1,5 @@
-<html>
-  <head>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
     <%- include ./partial/header.ejs %>
-    <h1>Campaign detail for <%= campaign.title %></h1>
-  </body>
+    <h4><%= campaign.title %></h4>
     <div class="">
       <p>Title: <%-campaign.title%></p>
       <p>Goal: Rp <%-campaign.goal%></p>
@@ -22,5 +16,6 @@
         <%}%>
       <%}%>
     </div>
+  </body>
   <%- include ./partial/footer.ejs %>
 </html>

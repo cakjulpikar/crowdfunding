@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
     <%- include ./partial/header.ejs %>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-  </body>
+
   <%campaigns.forEach(campaign=>{%>
-    <div class="campaigns">
+    <div class="section">
       <p>Title: <a href="/campaign/<%-campaign.id%>"><%-campaign.title%></a></p>
       <p>Goal: Rp <%-campaign.goal%></p>
       <p>Starter: <a href="/users/<%=campaign.starter_id%>"><%-campaign.User.username%></a></p>
@@ -23,5 +16,6 @@
       <%}%>
     </div>
   <%})%>
+  </body>
   <%- include ./partial/footer.ejs %>
 </html>

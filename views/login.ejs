@@ -7,13 +7,15 @@
   <body>
     <%- include ./partial/header.ejs %>
     <h3>Log In Here</h3>
-    <form action="/login" method="post">
-      <label for="">Username: </label>
-      <input type="text" name="username" value="" placeholder="specify your username here"><br>
-      <label for="">Password :</label>
-      <input type="password" name="password" value="" placeholder="specify your password here"><br>
-      <input type="submit" value="Login!">
-    </form>
+    <div class=row">
+      <form class="col s12" action="/login" method="post">
+        <label for="">Username: </label>
+        <input type="text" name="username" value="" placeholder="specify your username here"><br>
+        <label for="">Password :</label>
+        <input type="password" name="password" value="" placeholder="specify your password here"><br>
+        <input type="submit" value="Login!">
+      </form>
+    </div>
   </body>
   <%- include ./partial/footer.ejs %>
 </html>
